@@ -1,0 +1,216 @@
+body {
+  /* margin: 0;
+    padding: 1em;
+    min-width: 350px;
+    background: #ccc;
+    color: black; */
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+#joke {
+  width: 100%;
+  font-size: 1.5em;
+  box-shadow: 0px 15px 20px 0px rgb(0 0 0 / 10%);
+  padding: 20px 30px;
+  border-radius: 6px;
+  background: var(--light);
+  min-height: 130px;
+  max-height: 200px;
+  overflow: auto;
+  color:var(--text)
+}
+
+a {
+  color: unset;
+  text-decoration: unset;
+}
+.flex {
+  display: flex;
+}
+
+.container {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background);
+  /* padding: 1rem; */
+}
+.container header {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 2rem;
+  /* margin-right: 2rem */
+  /* padding: 1rem 0; */
+  /* margin: 1rem; */
+  color: var(--header);
+  position: relative;
+}
+
+.container header img {
+  width: 10%;
+  /* position:absolute; */
+  /* right:0; */
+  /* top:0; */
+  border: 3px solid var(--light);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.container header img:hover {
+  border: 3px solid var(--hover);
+}
+.container main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+.container main article {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.container main article.interact-container {
+  justify-content: space-around;
+}
+
+.container main article.btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.container main article.btn-container button {
+  /* width: 50%; */
+  padding: 0.8rem;
+  cursor: pointer;
+  background-color: var(--button);
+  border-radius: 0.25rem;
+  border-color: var(--primary);
+  color: var(--light);
+  font-weight: bolder;
+  box-shadow: 0px 15px 20px 0px rgb(0 0 0 / 10%);
+  transition: width 2s;
+
+  padding: 15px 25px;
+  /* font-size: 24px; */
+  /* text-align: center; */
+  /* cursor: pointer; */
+  /* outline: none; */
+  color: #fff;
+  /* background-color: #04AA6D; */
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.container main article.btn-container button:hover {
+  background-color: var(--hover);
+}
+
+.container main article.btn-container button:active {
+  background-color: var(--hover);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.container main article textarea {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  height: 150px;
+  resize: vertical;
+  border-color: var(--primary);
+  width: 100%;
+}
+.container footer {
+  margin: 1rem;
+}
+
+
+
+
+
+
+/* Theme switcher styles */
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 55px;
+  height: 25px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--primary);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 35px;
+  width: 35px;
+  left: 0px;
+  bottom: 4px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  box-shadow: 0 0px 15px #2020203d;
+  background: black url("https://i.ibb.co/FxzBYR9/night.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+input:checked + .slider {
+  background-color: var(--primary);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--primary);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(24px);
+  -ms-transform: translateX(24px);
+  transform: translateX(24px);
+  background: white url("https://i.ibb.co/7JfqXxB/sunny.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    
+  </head>
+  <body>
+    <div class="container flex">
+      <header>
+        <a href="https://jokelaty.vercel.app/" target="_blank"><h1>Jokelaty</h1></a>
+        <label id="switch" class="switch">
+          <input type="checkbox" id="themeSlider" />
+          <span class="slider round"></span>
+        </label>
+        <img src="./assets/me.jpg" alt="me" id="me" />
+      </header>
+      <main>
+        <article>
+          <div id="joke"></div>
+        </article>
+        <article class="interact-container">
+          <article>
+            <div id="like">👍</div>
+            <span id="likeCount"> 0 </span>
+          </article>
+          <article>
+            <div id="dislike">👎</div>
+            <span id="dislikeCount"> 0 </span>
+          </article>
+        </article>
+        <article class="btn-container">
+          <button id="one-more"></button>
+        </article>
+      </main>
+      <footer></footer>
+    </div>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

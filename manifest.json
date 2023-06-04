@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Jockelaty",
+  "version": "1.0.0",
+  "description": "Take a break ! Have a joke",
+  "short_name": "JOKE",
+  "permissions": ["activeTab", "declarativeContent", "storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://*/*"],
+      "js": ["./js/script.js"]
+    }
+  ],
+   "icons": {
+    "16": "assets/icon128.png",
+    "48": "assets/icon128.png",
+    "128": "assets/icon128.png"
+  },
+
+  "action": {
+    "default_title": "Take a break ! Have a joke",
+    "default_popup": "popup.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["css/fontawesome.min.css", "css/regular.min.css", "webfonts/fa-regular-400.woff2"],
+      "matches": ["https://*/*"]
+    }
+  ]
+}
