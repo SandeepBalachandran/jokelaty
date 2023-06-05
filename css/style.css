@@ -81,6 +81,7 @@ a {
 
 .container main article.interact-container {
   justify-content: space-around;
+  font-size: 15px;
 }
 
 .container main article.btn-container {
@@ -113,6 +114,16 @@ a {
   border: none;
   border-radius: 15px;
   box-shadow: 0 9px #999;
+}
+
+#likeCount,#dislikeCount {
+  margin-top: 3px;
+    margin-left: 5px;
+    color:var(--text)
+}
+
+#like:hover,#dislike:hover{
+  cursor: pointer;
 }
 
 .container main article.btn-container button:hover {

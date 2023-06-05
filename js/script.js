@@ -1,4 +1,4 @@
-
+// chrome.storage.sync.clear();
 const lightMode = {
     "--primary": "#0385fc",
     "--header": "#0385fc",
@@ -74,6 +74,19 @@ document.addEventListener("DOMContentLoaded", () => {
         jokeContainer.innerHTML = joke;
         oneMoreButton.disabled = false;
         oneMoreButton.style.cursor = "pointer";
+        likeBtn.style.pointerEvents = 'auto'
+        dislikeBtn.style.pointerEvents = 'auto'
+    }
+
+
+    function isEmpty(obj) {
+        for (const prop in obj) {
+            if (Object.hasOwn(obj, prop)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     const getInitialJoke = () => {
@@ -115,13 +128,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const onLikeclicked = () => {
         chrome.storage.sync.set({ 'like': ++likes }, function () {
-            likeCount.innerHTML  = likes
+            likeCount.innerHTML = likes
+            likeBtn.style.pointerEvents = 'none'
+            dislikeBtn.style.pointerEvents = 'none'
         });
     }
 
     const onDisLikeclicked = () => {
         chrome.storage.sync.set({ 'dislike': ++dislikes }, function () {
             dislikeCount.innerHTML = dislikes
+            likeBtn.style.pointerEvents = 'none'
+            dislikeBtn.style.pointerEvents = 'none'
         });
     }
 
@@ -152,13 +169,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     chrome.storage.sync.get(['like'], function (result) {
-        likes = result.like
-        likeCount.innerHTML = result.like
+        if (!isEmpty(result)) {
+            likes = result.like
+            likeCount.innerHTML = result.like
+        } else {
+            likes = 0
+            likeCount.innerHTML = 0
+        }
     });
 
     chrome.storage.sync.get(['dislike'], function (result) {
-        dislikes = result.dislike
-        dislikeCount.innerHTML = result.dislike
+        if (!isEmpty(result)) {
+
+            dislikes = result.dislike
+            dislikeCount.innerHTML = result.dislike
+        } else {
+            dislikes = 0
+            dislikeCount.innerHTML = 0
+        }
     });
 
 });
